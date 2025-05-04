@@ -40,11 +40,11 @@ const handleRemoveSpaceOnClick = () =>{
   <div className="mb-3">
     <textarea className="form-control"  value={text} onChange={handleOnChnage} style={{backgroundColor:props.mode==="dark"?"grey":"white",color:props.mode==="dark"?"white":"black"}}id="mybox" rows="8"></textarea>
   </div>
-<button className="btn btn-primary mx-2" onClick={handleUpClick}>Convert to Uppercase</button>
-<button className="btn btn-primary mx-2" onClick={handleLoClick}>Convert to Lowercasecase</button>
-<button className="btn btn-primary mx-2" onClick={handleClearClick}>Clear Text</button>
-<button className="btn btn-primary mx-2" onClick={handleCopyOnClick}>Copy Text</button>
-<button className="btn btn-primary mx-2" onClick={handleRemoveSpaceOnClick}>Assemble Text</button>
+<button className="btn btn-primary my-2 mx-2" onClick={handleUpClick}>Convert to Uppercase</button>
+<button className="btn btn-primary my-2 mx-2" onClick={handleLoClick}>Convert to Lowercasecase</button>
+<button className="btn btn-primary my-2 mx-2" onClick={handleClearClick}>Clear Text</button>
+<button className="btn btn-primary my-2 mx-2" onClick={handleCopyOnClick}>Copy Text</button>
+<button className="btn btn-primary my-2 mx-2" onClick={handleRemoveSpaceOnClick}>Assemble Text</button>
 </div>
 
 <div className="conatiner my-3" style={{color:props.mode==="dark"?"white":"black"}}>
