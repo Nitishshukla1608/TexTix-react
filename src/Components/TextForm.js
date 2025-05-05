@@ -28,8 +28,8 @@ const handleCopyOnClick = ()=>{
   props.showAlert("Copied to clipboard","Success")
 }
 const handleRemoveSpaceOnClick = () =>{
-  const newText = text.replace(/\s+/g, '*');
-  setText(newText.replaceAll("_"," "));
+  let newText = input.replace(/\s+/g, ' ').trim();
+  setText(newText);
   props.showAlert("Extra spaces has been removed","Success")
 }
  // text = "enter text here 2"  Wrong way to change the state of text the coorect way to change is steText function....
