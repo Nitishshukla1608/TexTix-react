@@ -28,7 +28,7 @@ const handleCopyOnClick = ()=>{
   props.showAlert("Copied to clipboard","Success")
 }
 const handleRemoveSpaceOnClick = () =>{
-  let newText = input.replace(/\s+/g, ' ').trim();
+  let newText = text.replace(/\s+/g, ' ').trim();
   setText(newText);
   props.showAlert("Extra spaces has been removed","Success")
 }
