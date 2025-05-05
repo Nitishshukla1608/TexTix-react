@@ -24,7 +24,7 @@ function App() {
     });
     setTimeout(() => {
       setAlert(null);
-    }, 1500);
+    }, 1900);
   };
 
   const toggleMode = () => {
@@ -48,15 +48,15 @@ function App() {
         toggleMode={toggleMode}
       />
       <div className="container my-3">
-        {/* <Alert alert={alert} /> */}
-        {/* <Routes>
-          <Route path="/about" element={<About />} />
+        <Alert alert={alert} /> 
+       {/* <Routes>
+          <Route path="/about" element={<About  mode={mode}/>} />
           <Route
             path="/textform"
             element={
               <TextForm
                 showAlert={showAlert}
-                heading="Enter the text to convert"
+                heading="Try TexTix- Word counter,character counter,Remove extra spaces"
                 mode={mode}
               />
             }

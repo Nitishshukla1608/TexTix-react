@@ -8,16 +8,16 @@ export default function Navbar(props) {
     data-bs-theme={props.mode}
   >
   <div className="container-fluid">
-    {/* <Link className="navbar-brand" to="/textform"><b>{props.title}</b></Link> */}
-    <a className="navbar-brand" href="#"><b>{props.title}</b></a>
+    <a className="navbar-brand" href="/textform"><b>{props.title}</b></a>
+  
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span className="navbar-toggler-icon"></span>
     </button>
     <div className="collapse navbar-collapse" id="navbarSupportedContent">
       <ul className="navbar-nav me-auto mb-2 mb-lg-0">
         <li className="nav-item">
-          {/* <Link className="nav-link active" aria-current="page" to="/textform">Home</Link> */}
-          <a className="nav-link active" aria-current="page" href="#">Home</a>
+          <a className="nav-link active" aria-current="page" href="/textform">Home</a>
+         
         </li>
         <li className="nav-item">
           {/* <Link className="nav-link" to="/about">{props.aboutUs}</Link> */}
@@ -25,12 +25,12 @@ export default function Navbar(props) {
         </li>
         
       </ul>
-      {/* <form className="d-flex" role="search">
-        <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+      <form className="d-flex" role="search">
+        <input className="form-control me-2 " type="search" placeholder="Search" aria-label="Search"/>
         <button className="btn btn-outline-success" type="submit">Search</button>
-      </form> */}
+      </form>
       <div className={`form-check form-switch text-${props.mode==="light"?"dark":"light"}`}  >
-  <input className="form-check-input" type="checkbox" role="switch"  onClick={props.toggleMode}id="switchCheckDefault"/>
+  <input className="form-check-input mx-1" type="checkbox" role="switch"  onClick={props.toggleMode}id="switchCheckDefault"/>
   <label className="form-check-label" htmlFor="switchCheckDefault">Enable DarkMode</label>
 </div>
     </div>

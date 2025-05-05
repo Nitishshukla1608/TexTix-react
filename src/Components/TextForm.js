@@ -25,6 +25,7 @@ setText(event.target.value)
       }
 const handleCopyOnClick = ()=>{
   navigator.clipboard.writeText(text)
+  document.getSelection().removeAllRanges();
   props.showAlert("Copied to clipboard","Success")
 }
 const handleRemoveSpaceOnClick = () =>{
@@ -36,23 +37,23 @@ const handleRemoveSpaceOnClick = () =>{
   return (
  <>
 <div className='container' style={{color:props.mode==="dark"?"white":"black"}}>
-  <h1>{props.heading}</h1>
+  <h1 className='mb-3'>{props.heading}</h1>
   <div className="mb-3">
-    <textarea className="form-control"  value={text} onChange={handleOnChnage} style={{backgroundColor:props.mode==="dark"?"grey":"white",color:props.mode==="dark"?"white":"black"}}id="mybox" rows="8"></textarea>
+    <textarea className="form-control"  value={text} onChange={handleOnChnage} style={{backgroundColor:props.mode==="dark"?"#13466e":"white",color:props.mode==="dark"?"white":"black"}}id="mybox" rows="8"></textarea>
   </div>
-<button className="btn btn-primary my-2 mx-2" onClick={handleUpClick}>Convert to Uppercase</button>
-<button className="btn btn-primary my-2 mx-2" onClick={handleLoClick}>Convert to Lowercasecase</button>
-<button className="btn btn-primary my-2 mx-2" onClick={handleClearClick}>Clear Text</button>
-<button className="btn btn-primary my-2 mx-2" onClick={handleCopyOnClick}>Copy Text</button>
-<button className="btn btn-primary my-2 mx-2" onClick={handleRemoveSpaceOnClick}>Assemble Text</button>
+<button disabled={text.length===0} className="btn btn-primary my-1 mx-2" onClick={handleUpClick}>Convert to Uppercase</button>
+<button disabled={text.length===0} className="btn btn-primary my-1 mx-2" onClick={handleLoClick}>Convert to Lowercasecase</button>
+<button disabled={text.length===0} className="btn btn-primary my-1 mx-2" onClick={handleClearClick}>Clear Text</button>
+<button disabled={text.length===0} className="btn btn-primary my-1 mx-2" onClick={handleCopyOnClick}>Copy Text</button>
+<button disabled={text.length===0} className="btn btn-primary my-1 mx-2" onClick={handleRemoveSpaceOnClick}>Assemble Text</button>
 </div>
 
 <div className="conatiner my-3" style={{color:props.mode==="dark"?"white":"black"}}>
   <h4>Your text summary</h4>
-  <p>{text.split(" ").length} words,{text.length} characters</p>
-  <p>{text.split(" ").length*0.08} Minutes to read</p>
+  <p>{text.split(" ").filter((element)=>{return element.length!==0}).length} words,{text.length} characters</p>
+  <p>{text.split(" ").filter((element)=>{return element.length!==0}).length*0.08} Minutes to read</p>
   <h4>Preview</h4>
-  <p>{text.length>0?text:"Enter something to preview it here"}</p>
+  <p>{text.length>0?text:"MNothing to preview"}</p>
 </div>
 </>
   )
