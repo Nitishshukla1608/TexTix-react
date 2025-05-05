@@ -40,7 +40,7 @@ function App() {
   };
   return (
     <>
-    {/* <Router> */}
+    <Router>
       <Navbar
         title="TextTix"
         aboutUs="About"
@@ -49,7 +49,7 @@ function App() {
       />
       <div className="container my-3">
         <Alert alert={alert} /> 
-       {/* <Routes>
+       <Routes>
           <Route path="/about" element={<About  mode={mode}/>} />
           <Route
             path="/textform"
@@ -61,14 +61,10 @@ function App() {
               />
             }
           />
-        </Routes> */}
-         <TextForm
-                showAlert={showAlert}
-                heading="Enter the text to convert"
-                mode={mode}
-              />
+        </Routes>
+         
       </div>
-    {/* </Router> */}
+    </Router>
     </>
   );
 }
