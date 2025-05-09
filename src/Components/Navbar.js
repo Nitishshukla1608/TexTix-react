@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 
 export default function Navbar(props) {
   return (<>    <nav
-    className={`navbar navbar-expand-lg bg-body-tertiary`}
-    data-bs-theme={props.mode}
+    className={`navbar navbar-expand-lg navbar-dark bg-dark`}
+    
   >
   <div className="container-fluid">
     <Link className="navbar-brand" to="/textform"><b>{props.title}</b></Link>
@@ -20,19 +20,39 @@ export default function Navbar(props) {
          
         </li>
         <li className="nav-item">
-          <Link className="nav-link" to="/about">{props.aboutUs}</Link>
+          <Link className="nav-linkb active" to="/about">{props.aboutUs}</Link>
          
         </li>
         
       </ul>
+
+      <div className="d-flex">
+
+        <div onClick={()=>{props.toggleMode('primary')}} className='bg-primary rounded mx-2'style={{height:"30px", width:"30px" , cursor:"pointer"} }>
+        </div>
+        <div onClick={()=>{props.toggleMode('danger')}} className='bg-danger rounded mx-2'style={{height:"30px", width:"30px",  cursor:"pointer"} }>
+        </div>
+        <div onClick={()=>{props.toggleMode('success')}} className='bg-success rounded mx-2'style={{height:"30px", width:"30px" , cursor:"pointer"} }>
+        </div>
+        <div onClick={()=>{props.toggleMode('warning')}} className='bg-warning rounded mx-2'style={{height:"30px", width:"30px" , cursor:"pointer"} }>
+        </div>
+        <div onClick={()=>{props.toggleMode('dark')}} className='bg-dark rounded mx-2'style={{height:"30px", width:"30px" , cursor:"pointer"} }>
+        </div>
+        <div onClick={()=>{props.toggleMode('light')}} className='bg-light rounded mx-2'style={{height:"30px", width:"30px" , cursor:"pointer"} }>
+        </div>
+
+
+      </div>
+
+
+
+
+
       <form className="d-flex" role="search">
         <input className="form-control me-2 " type="search" placeholder="Search" aria-label="Search"/>
         <button className="btn btn-outline-success" type="submit">Search</button>
       </form>
-      <div className={`form-check form-switch text-${props.mode==="light"?"dark":"light"}`}  >
-  <input className="form-check-input mx-1" type="checkbox" role="switch"  onClick={props.toggleMode}id="switchCheckDefault"/>
-  <label className="form-check-label" htmlFor="switchCheckDefault">Enable DarkMode</label>
-</div>
+  
     </div>
   </div>
 </nav>

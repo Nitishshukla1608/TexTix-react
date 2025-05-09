@@ -50,8 +50,8 @@ const handleRemoveSpaceOnClick = () =>{
 
 <div className="conatiner my-3" style={{color:props.mode==="dark"?"white":"black"}}>
   <h4>Your text summary</h4>
-  <p>{text.split(" ").filter((element)=>{return element.length!==0}).length} words,{text.length} characters</p>
-  <p>{text.split(" ").filter((element)=>{return element.length!==0}).length*0.08} Minutes to read</p>
+  <p>{text.split(/\s+/g).filter((element)=>{return element.length!==0}).length} words,{text.length} characters</p>
+  <p>{text.split(/\s+/g).filter((element)=>{return element.length!==0}).length*0.08} Minutes to read</p>
   <h4>Preview</h4>
   <p>{text.length>0?text:"MNothing to preview"}</p>
 </div>
